@@ -90,17 +90,25 @@ void func_command(char * arg){
 }
 
 void gp_command(char * arg){
-	kprint("Current Acount info: "); 
+	char uidstr[MAXSIZE];
+	kprint("Current Acount info; \n");
+	kprint("   User ID: ");
+	itoa(uid,uidstr);
+	puts(uidstr);
+	kprint("   User Name: "); 
 	switch(uid) {
 	
 		case 0:
 			kprint("Root Account\n");
 			break;
+		case 100:
+			kprint("Default User\n");
+			break;
 		case 500:
 			kprint("Administrator Account\n");
 			break;
 		default:
-			kprint("Default User\n");
+			kprint("Unknown User\n");
 		}
 }
 
